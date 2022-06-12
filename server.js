@@ -1,25 +1,19 @@
 const express = require("express");
 
-// required routes
-const api = require("./routes/API");
-const html = require("./routes/HTML");
+// Create Routes
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
-// App initialized, create port
+// Initialize app & designate port
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Setting up body
-app.use("/", api); 
-app.use("/", html); 
-
+// Application Setup
 app.use(express.json());
-app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); 
+app.use(express.static("public"));
+app.use("/", apiRoutes); 
+app.use("/", htmlRoutes); 
 
-
-// Server start on specified port
-app.listen(PORT, () => {
-    console.log(
-        "App Listening on PORT " + PORT + " Visit http://localhost:%s/ in your browser.", PORT
-    );
-});
+// Start server on designated port
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
