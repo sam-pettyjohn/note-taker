@@ -75,7 +75,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 - Application allows users to delete notes.
 
 ## Mock Up
-![mockup](./assets/images/mock-up.gif)
+![mockup](./public/assets/images/note-taker%20mockup1.png)
+![mockup](./public/assets/images/note-taker%20mockup2.png)
 
 ## Built With
 
